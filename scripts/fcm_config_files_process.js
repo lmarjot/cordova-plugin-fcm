@@ -20,7 +20,7 @@ var config = fs.readFileSync('config.xml').toString();
 var name = getValue(config, 'name');
 
 var IOS_DIR = 'platforms/ios';
-var ANDROID_DIR = 'platforms/android/app';
+var ANDROID_DIR = 'platforms/android';
 
 var PLATFORM = {
     IOS: {
@@ -36,14 +36,14 @@ var PLATFORM = {
     },
     ANDROID: {
         dest: [
-            ANDROID_DIR + '/google-services.json'
+            ANDROID_DIR + '/app/google-services.json'
         ],
         src: [
             'google-services.json',
-            ANDROID_DIR + '/assets/www/google-services.json',
+            ANDROID_DIR + '/app/assets/www/google-services.json',
             'www/google-services.json'
         ],
-        stringsXml: ANDROID_DIR + '/res/values/strings.xml'
+        stringsXml: ANDROID_DIR + '/app/res/values/strings.xml'
     }
 };
 
